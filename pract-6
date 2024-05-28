@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Numbers</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main">
+<h3>Prime Number Finder</h3>
+<label>First Number:</label>
+<input type="text" id="start" placeholder="Enter first number">
+<br><br>
+<label>Ending Number:</label>
+<input type="text" id="end" placeholder="Enter end number">
+<br><br>
+<button onclick="findPrimes()">Prime Numbers:</button>
+<p id="result"></p>
+<input type="text" id="primeNumbersOutput" readonly>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+<style>
+body{
+height: 100%;
+width: 100%;
+font-family: 'poppins',sans-serif;
+background-color: #111110;
+}
+.container {
+margin: 60px auto;
+width: 50%;
+text-align: center;
+}
+.main{
+background-image: linear-gradient(to top, #8f615a 0%, #b9badb 100%);
+height: 60vh;
+width: 50%;
+margin: 40px;
+padding: 40px;
+border: 1px solid black;
+text-align: center;
+border-radius: 4px;
+position: relative;
+top:5rem;
+left: 18rem;
+}
+.main input{
+margin: 6px;
+padding: 6px;
+}
+.main button{
+cursor: pointer;
+border-radius: 100px;
+height: 2rem;
+width: 7rem;
+border: none;
+background-color: #9AC8CD;
+outline: #cccace;
+border: 1px solid #bcbabe;
+}
+.main button:hover{
+background-color: rgb(27, 180, 27);
+color: white
+}
+.main input{
+height: 2rem;
+width: 17rem;
+border-radius: 10px;
+border: none;
+outline: none;
+}
+#primeNumbersOutput{
+background-color:#e0e4ba;
+font-weight: bold;
+}
+</style>
+<script>
+function isPrime(num) {
+if (num <= 1)
+return false;
+if (num <= 3)
+return true;
+if (num % 2 === 0 || num % 3 === 0) return false;
+for (let i = 5; i * i <= num; i += 6) {
+if (num % i === 0 || num % (i + 2) === 0) return false;
+}
+return true;
+}
+function findPrimes() {
+const start = parseInt(document.getElementById('start').value);
+const end = parseInt(document.getElementById('end').value);
+if (isNaN(start) || isNaN(end)) {
+alert("Please enter valid numbers");
+return;
+}
+const primes = [];
+for (let i = start; i <= end; i++) {
+if (isPrime(i)) {
+primes.push(i);
+}
+}
+document.getElementById('result').innerText = "Prime numbers between " + start + " and "
++ end + " are: ";
+document.getElementById('primeNumbersOutput').value = primes.join(", ");
+}
+</script>
