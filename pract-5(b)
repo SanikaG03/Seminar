@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverse Digits</title>
+<link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main">
+<h2>Reverse Digits of a Number</h2>
+<label for="numberInput">Enter a number:</label>
+<input type="number" id="numberInput">
+<br><br>
+<label>Reverse Number:</label>
+<input type="text" id="reversedOutput" readonly>
+<br><br>
+<button onclick="reverseDigits()">Reverse Digits</button>
+</div>
+<script src="script.js">
+</script>
+</body>
+</html>
+<style>
+body{
+height: 100%;
+width: 100%;
+font-family: 'poppins',sans-serif;
+background-color: #0b0b0b;
+}
+.container {
+margin: 50px auto;
+width: 50%;
+text-align: center;
+}
+.main{
+background-image: linear-gradient(to top, #33cee2 0%, #0d5562 100%);
+height: 50vh;
+width: 50%;
+margin: 10px;
+padding: 10px;
+border: 1px solid black;
+text-align: center;
+border-radius: 5px;
+position: relative;
+top:5rem;
+left: 17rem;
+}
+.main button{
+cursor: pointer;
+border-radius: 10px;
+height: 2rem;
+width: 7rem;
+border: none;
+background-color: #FFF5E0;
+}
+.main button:hover{
+background-color: green;
+color: white
+}
+.main input{
+height: 2rem;
+width: 17rem;
+border-radius: 10px;
+border: none;
+outline: none;
+}
+</style>
+<script>
+function reverseDigits() {
+var number = document.getElementById("numberInput").value;
+var reversedNumber = reverseNumber(number);
+document.getElementById("reversedOutput").value =reversedNumber;
+}
+function reverseNumber(number) {
+var reversedNumber = 0;
+while (number > 0) {
+var digit = number % 10;
+reversedNumber = (reversedNumber * 10) + digit;
+number = Math.floor(number / 10);
+}
+return reversedNumber;
+}
+function reverseNumber(number) {
+var reversedNumber = 0;
+while (number > 0) {
+var digit = number % 10;
+reversedNumber = (reversedNumber * 10) + digit;
+number = Math.floor(number / 10);
+}
+return reversedNumber;
+}
+</script>
