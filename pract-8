@@ -1,0 +1,82 @@
+<?php
+$counterFile = "visitor_count.txt";
+function incrementVisitorCount($counterFile) {
+$count =
+if(file_exists($counterFile)) {
+$count = intval(file_get_content s($counterFile));
+$
+file_put_contents($counterFile, $count);
+return $count;
+}
+$visitorCount = incrementVisitorCount($counterFile);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF 8">
+<meta name="viewport" con tent="width=device width, initial scale=1.0">
+<title>Visitor Counter</
+<
+@keyframes gradientAnimation
+0% { background position: 0% 50%; }
+50% { background position: 100% 50%; }
+100% { background position: 0% 50%; }
+body {
+fontfont--family: Arial, sansfamily: Arial, sans--serif;serif;
+background: linearbackground: linear--gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
+backgroundbackground--size: 400% 400%;size: 400% 400%;
+animation: gradientAnimation 10s ease infinite;animation: gradientAnimation 10s ease infinite;
+display: flex;display: flex;
+justifyjustify--content: center;content: center;
+alignalign--items: center;items: center;
+height: 100vh;height: 100vh;
+margin: 0;margin: 0;
+overflow: hidden;overflow: hidden;
+}}
+.counter.counter--container {container {
+background: rgba(255, 255, 255, 0.8);background: rgba(255, 255, 255, 0.8);
+padding: 20px 40px;padding: 20px 40px;
+borderborder--radius: 10px;radius: 10px;
+boxbox--shadow: 0 4px 8px rgba(0, 0, 0, 0.1);shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+texttext--align: centealign: center;r;
+position: relative;position: relative;
+}}
+.counter.counter--container h1 {container h1 {
+fontfont--size: 2em;size: 2em;
+margin: 0;margin: 0;
+color: #333;color: #333;
+}}
+.counter.counter--container p {container p {
+fontfont--size: 1em;size: 1em;
+color: #666;color: #666;
+}}
+.animated.animated--bg {bg {
+position: absolute;position: absolute;
+width: 200%;width: 200%;
+height: 200%;height: 200%;
+top: top: --50%;50%;
+left: left: --50%;50%;
+background: radialbackground: radial--gradient(circle, rgba(255,255,255,0.1gradient(circle, rgba(255,255,255,0.1) 10%, ) 10%, transparent 10%),transparent 10%),
+radialradial--gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10%);
+backgroundbackground--size: 25% 25%;size: 25% 25%;
+animation: bgAnimation 20s linear infinite;animation: bgAnimation 20s linear infinite;
+}}
+@keyframes bgAnimation {@keyframes bgAnimation {
+0% { transform: translateX(0) translateY(0); }0% { transform: translateX(0) translateY(0); }
+50% { transform: translateX(50% { transform: translateX(--25%) translateY(25%) translateY(--25%); }25%); }
+100% { transform: translateX(0) translateY(0); }100% { transform: translateX(0) translateY(0); }
+}}
+</style></style>
+</head>
+</head>
+<body>
+<body>
+<div class="animated<div class="animated--bg"></dibg"></div>v>
+<div class="counter<div class="counter--container">container">
+<h1>Visitor Count: <?php echo $visitorCount; ?></h1><h1>Visitor Count: <?php echo $visitorCount; ?></h1>
+<p>Thank you for visiting our site!</p><p>Thank you for visiting our site!</p>
+</div></div>
+</body>
+</body>
+</html>
+</html>
