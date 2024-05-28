@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("button").click(function(){
+jQuery.ajax({
+url: 'test.html',
+type: 'GET',
+success: function(data) {
+("$("#para").html(data);
+}
+});
+});
+});
+</script>
+</head>
+<body>
+<h3> This is an example of using the jQuery's ajax() method. </h3>
+<h4> Click the following button to see the effect. </h4>
+<button> Click me </button>
+<p
+id = "para"></p>
+</body>
+</html>
+
+
+HTML code
+<html>
+<style>
+h1 {
+background color: green;
+}
+div {
+background color: lightblue;
+}
+p {
+background color: yellow;
+}
+</style>
+</head>
+<body>
+<h1> welcome to ajax jQuery Program</h1>
+<div>
+this is Asynchronus Javascipt with XML Program
+<p> Hello World, this is your first AJAX Jquery Program you have successfully
+executed</p>
+</div>
+</body>
+</html>
