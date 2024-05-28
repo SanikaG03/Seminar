@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Operations</title>
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+<div>
+<label for="inputString">Enter a string:</label>
+<input type="text" id="inputString">
+</div>
+<br>
+<button onclick="performStringOperations()">Perform Operations</button>
+<br><br>
+<div>
+<label for="vowelCountResult">Vowel Count:</label>
+<input type="text" id="vowelCountResult" readonly>
+</div>
+<br>
+<div>
+<label for="uppercaseResult">Uppercase:</label>
+<input type="text" id="uppercaseResult" readonly>
+</div>
+<br>
+<div>
+<label for="lowercaseResult">Lowercase:</label>
+<input type="text" id="lowercaseResult" readonly>
+</div>
+<br>
+<div>
+<label for="reverseResult">Reversed:</label>
+<input type="text" id="reverseResult" readonly>
+</div>
+<br>
+<div>
+<label for="substringResult">Substring (first 5 chars):</label>
+<input type="text" id="substringResult" readonly>
+</div>
+</div>
+</body>
+</html>
+<style>
+body{
+height: 100%;
+width: 100%;
+background-image: linear-gradient(to right, #b8a488 0%, #1e1c1b 100%);
+}
+.main {
+margin: 50px auto;
+width: 50%;
+text-align: center;
+}
+.main{
+background-image: linear-gradient(to top, #2893b4 0%, #75c8dc 100%);
+height: 70vh;
+width: 50%;
+margin: 10px;
+padding: 10px;
+border: 1px solid black;
+text-align: center;
+border-radius: 5px;
+position: relative;
+top:5rem;
+left: 17rem;
+}
+.main button{
+cursor: pointer;
+border-radius: 10px;
+height: 2.5rem;
+width: 8rem;
+border: none;
+background-color: #FFF5E0;
+}
+.main button:hover{
+background-image: linear-gradient(120deg, #93bb38 0%, #96e6a1 100%);
+color: black;
+}
+.main input{
+height: 2rem;
+width: 17rem;
+border-radius: 10px;
+border: none;
+outline: none;
+}
+</style>
+<script>
+function performStringOperations() {
+var inputString = document.getElementById('inputString').value;
+var vowelCount = countVowels(inputString);
+var uppercase = inputString.toUpperCase();
+var lowercase = inputString.toLowerCase();
+var reversed = inputString.split('').reverse().join('');
+var substring = inputString.substring(0, 5);
+document.getElementById('vowelCountResult').value = vowelCount;
+document.getElementById('uppercaseResult').value = uppercase;
+document.getElementById('lowercaseResult').value = lowercase;
+document.getElementById('reverseResult').value = reversed;
+document.getElementById('substringResult').value = substring;
+}
+function countVowels(str) {
+var vowels = 'aeiouAEIOU';
+var count = 0;
+for (var i = 0; i < str.length; i++) {
+if (vowels.indexOf(str[i]) !== -1) {
+count++;
+}
+}
+return count;
+}
+</script>
