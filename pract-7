@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Clock</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+background: linear-gradient(to right, #ff9966, #ff5e62);
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+color: #000;
+}
+.header {
+font-size: 3em;
+font-weight: bold;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+.clock-container {
+text-align: center;
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 15px;
+padding: 30px 50px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.clock-container h2 {
+font-size: 48px;
+font-weight: bold;
+margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="header">Digital Clock</div>
+<div class="clock-container">
+<h2>
+<?php
+$date = new DateTime(null, new DateTimezone("Asia/Kolkata"));
+echo $date->format('d/m/y').'<br>';
+echo $date->format('H:i a');
+?>
+</h2>
+</div>
+</body>
+</html>
