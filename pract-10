@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+font family: Arial, sans serif;
+margin: 20px;
+background color: #fdfefa;
+}
+select {
+padding: 10px;
+margin right: 20px;
+border radius: 5px;
+border: 1px solid #ccc;
+font size: 16px;
+}
+#txtHint {
+margin top: 20px;
+}
+table {
+width: 100%;
+border collapse: collapse;
+margin top: 20px;
+}
+table, th, td {
+border: 1px solid #ccc;
+}
+th, td {
+padding: 12px;
+text align: left;
+}
+th {
+background color: #f2f2f2;
+}
+tr:nth
+child(even) {
+background color: #f9f9f9;
+}
+</style>
+<script>
+function showUser()
+{
+{
+var xmlhttp = new XMLHttpRequest();var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function()xmlhttp.onreadystatechange = function()
+{{
+if (this.readyState == 4 && tif (this.readyState == 4 && this.status == 200) his.status == 200)
+{{
+document.getElementById("txtHint").innerHTML = this.responseText;document.getElementById("txtHint").innerHTML = this.responseText;
+}}
+};};
+xmlhttp.open("GET", "family.php?q=" + document.getElementById("users").value + xmlhttp.open("GET", "family.php?q=" + document.getElementById("users").value + "&order=" + document.getElementById("order").val"&order=" + document.getElementById("order").value, true);ue, true);
+xmlhttp.send();xmlhttp.send();
+}
+}
+</script>
+</head>
+<body onLoad="showUser()">
+<body onLoad="showUser()">
+<select id="users" onchange="showUser()"><select id="users" onchange="showUser()">
+<option value="0">Select a Student:</option><option value="0">Select a Student:</option>
+<option value="1">ayan</option><option value="1">ayan</option>
+<option value="2">shakti</optio<option value="2">shakti</option>n>
+<option value="3">meher</option><option value="3">meher</option>
+<option value="4">akash</option><option value="4">akash</option>
+</select></select>
+<select id="order" onchange="showUser()"><select id="order" onchange="showUser()">
+<option value="1">Ascending Order</option><option value="1">Ascending Order</option>
+<option value="2">Descending Order</option><option value="2">Descending Order</option>
+</select></select>
+<br><br>
+<div id="txtHint"><b>Student info will be listed here...</b></div><div id="txtHint"><b>Student info will be listed here...</b></div>
+</body>
+</html>
+
+php code
+<?php
+$ser
+vername = "localhost";
+$username = "root";
+$password = "";
+$database = "mysql";
+$q = isset($_GET['q']) ? intval($_GET['q']) : 0;
+$order = isset($_GET['order']) ? intval($_GET['order']) : 1;
+$conn = mysqli_connect($servername, $userna
+me, $password, $database);
+if (!$conn) {
+die('Could not connect: ' . mysqli_connect_error());
+}
+if ($q == 0) {
+if ($order == 1) {
+$sql = "SELECT * FROM student ORDER BY Marks
+} else
+$sql = "SELECT * FROM student ORDER BY Marks
+} else {
+$sql = "SELECT * FROM student WHERE RollNo = '" . $q . "' ORDER BY Marks
+}
+$result = mysqli_query($conn, $sql);
+if (!$result) {
+die('Error executing query: ' . mysqli_error($conn));
+}
+echo "<table border='1'>
+<tr>
+<th>Roll No</th>
+<th>Student Name</th>
+<th>Branch</th>
+<th>Marks</th>
+</
+tr>";
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+echo "<tr>";
+echo "<td>" . $row['RollNo'] . "</td>";
+echo "<td>" . $row['Student_Name'] . "</td>";
+echo "<td>" . $row['Branch'] . "</td>";
+echo "<td>" . $row['Marks'] . "</td>";
+echo "</tr>";
+}
+mysqli_close($conn);
+?>
