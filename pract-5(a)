@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Length</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="main">
+<label>Enter a String:</label>
+<input type="text" id="inputString" placeholder="Enter a string">
+<br> <br>
+<label>Length of String:</label>
+<input type="text" id="lengthOutput" readonly>
+<br><br>
+<button onclick="displayLength()">Get Length</button>
+</div>
+</body>
+</html>
+<style>
+body{
+height: 100%;
+width: 100%;
+font-family: 'poppins',sans-serif;
+background-color: #101111;
+}
+.container {
+margin: 70px auto;
+width: 100%;
+text-align: center;
+}
+.main{
+background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%,
+rgb(59, 184, 204) 0%, rgb(103, 101, 100) 100.2% );
+height: 60vh;
+width: 50%;
+margin: 20px;
+padding: 30px;
+border: 1px solid black;
+text-align: center;
+border-radius: 5px;
+position: relative;
+top:5rem;
+left: 17rem;
+}
+.main input{
+margin: 15px;
+padding: 7px;
+}
+.main button{
+cursor: pointer;
+border-radius: 100px;
+height: 2rem;
+width: 9rem;
+border: none;
+background-color: #9AC8CD;
+outline: #eb8e7a;
+border: 1px solid #5784d6;
+}
+.main button:hover{
+background-color: rgb(239, 156, 67);
+color: white
+}
+.main input{
+height: 2rem;
+width: 17rem;
+border-radius: 100px;
+border: none;
+outline: none;
+}
+</style>
+<script>
+function displayLength() {
+var inputString = document.getElementById("inputString").value;
+var length = inputString.length;
+document.getElementById("lengthOutput").value = length;
+}
+</script>
