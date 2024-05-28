@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+#navbar{
+height: 300px;
+width: 100vw;
+background-color:rgba(245, 245, 245, 0.845);
+}
+#main{
+text-align: center;
+}
+#navbar h4{
+color: #337ab7;
+font-size: 15px;
+font-weight: 100;
+}
+#navbar h1{
+color: #a61510;
+font-size: 25px;
+font-weight: 100;
+}
+#first{
+text-align: center;
+}
+#nav{
+background-color: rgb(7, 146, 188);
+height: 60px;
+margin-top: 20px;
+margin-top: 10px;
+}
+#nav a{
+text-decoration: none;
+justify-content: space-evenly;
+color: white;
+font-size: 20px;
+font-weight: 100;
+padding: 10px;
+margin-bottom: 0%;
+margin-left: 55px;
+}
+#nav a:hover{
+background-color: #030b12;
+}
+#cse{
+height: 400px;
+width: 800px;
+background-image: url("https://images.static-collegedunia.com/public/college_data/images/campusimage/15494480322.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+margin-top: 30px;
+margin-left: 350px;
+}
+#head1 h1{
+color:#030b12;
+text-align: center;
+font-size: 30px;
+font-weight: 700;
+font-family: Arial, Helvetica, sans-serif;
+text-shadow: 2px 3px 3px rgba(63, 212, 219, 0.782),1px 2px 2px rgba(30, 30, 92, 0.782);
+}
+#about{
+margin-left: 30px;
+color: #3379b7;
+}
+#info{
+margin-left: 200px;
+line-height: 1.5;
+justify-content: baseline;
+}
+li{
+line-height: 1.5;
+}
+.foot{
+height:80%;
+width: 80%;
+background-color: #3041464c;
+margin-top: 60px;
+align-items: center;
+margin-left: 150px;
+text-align: center;
+border-radius: 20px;
+border: 1px solid rgba(0, 0, 255, 0.268);
+}
+</style>
+</head>
+<body>
+<header>
+<nav id="navbar">
+<div id="first">
+<a href="https://www.ncerpune.in/computer/top-computer-science-engineering-college-pune-ncer.php"><img src="https://www.ncerpune.in/images/ncer-logo.png" alt="NCER Logo" height ="130vh"width="130vw" class="img-responsive ncer-logo"></a>
+<div id="main">
+<BR>
+<h4>NUTAN MAHARASHTRA VIDYA PRASARAK MANDAL'S</h4><BR>
+<h1>NUTAN COLLEGE OF ENGINEERING AND REASERCH (NCER)</h1><br>
+<h4> Under Addmistrative support of Pimpari Chinchwad Education Trust</h4>
+</div>
+</div>
+<nav id="nav">
+<a href="#" >Home</a>
+<a href="#">About us</a>
+<a href="#">Department</a>
+<a href="#">Help</a>
+</nav>
+<section id="cse">
+</section>
+<section id="head1">
+<BR>
+<h1>DEPARTMENT OF COMPUTET SCIENCE AND ENGINEERING </h1>
+</section>
+<section id="about">
+<section class="foot">
+<footer>
+<br>
+<br>
+<h3>IMPORTANT LINK&nbsp;&nbsp; <i class="fa-solid fa-link"></i></h3>
+<br>
+<hr>
+<hr>
+<br>
+Top of page:<a href="#top"> click here &nbsp; <i class="fa-solid fa- house"></i></a><br>
+</footer>
+</section>
+<section id="icon">
+</section>
+</header>
+</nav>
+</body>
+</html>
