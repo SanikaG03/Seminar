@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="style.css" rel="stylesheet" >
+</head>
+<body>
+<form name="employeeForm" onsubmit="return validateForm()">
+<div class="main">
+<h3>Registration Form</h3>
+<label>Email</label>
+<br>
+<input type="text" name="email" placeholder="your email here"><br><br>
+<label>Name</label>
+<br>
+<input type="text" name="name" placeholder="your name here"><br><br>
+<label>Mobile Number</label>
+<br>
+<input type="text" name="mobile" placeholder="mobile number" maxlength="10"><br><br>
+<label>Address</label>
+<br>
+<input type="text" name="address" placeholder="address"><br><br>
+<label>Salary</label>
+<br>
+<input type="text" name="salary" placeholder="salary"><br><br>
+<input type="submit" value="Submit" class="btn">
+</form>
+</div>
+</body>
+</html>
+<style>
+.main{
+height: 70vh;
+width: 45%;
+margin: 50px;
+padding: 10px;
+border-radius: 1rem;
+background-color: #66c6e6;
+position: relative;
+top: 6.5rem;
+left: 18rem;
+}
+.main input{
+height: 2.5rem;
+width: 30rem;
+border-radius: 10px;
+outline: none;
+border: none;
+margin: 10px;
+}
+.btn{
+cursor: pointer;
+}
+.btn:hover{
+background-color: rgb(41, 172, 41);
+color: white;
+}
+.main h3{
+font-size: 1.5rem;
+text-align: center;
+}
+</style>
+<script>
+function validateForm() {
+var email = document.forms["employeeForm"]["email"].value; var name = document.forms["employeeForm"]["name"].value; var mobile = document.forms["employeeForm"]["mobile"].value; var address = document.forms["employeeForm"]["address"].value; var salary = document.forms["employeeForm"]["salary"].value;
+var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailPattern.test(email)) { alert("Please enter a valid email."); return false;
+}
+var namePattern = /^[A-Za-z\s]+$/;
+if (name.trim() === "" || !namePattern.test(name)) { alert("Please enter a valid name (only letters and spaces)."); return false;
+}
+var mobilePattern = /^\d{10}$/; if (!mobilePattern.test(mobile)) {
+alert("Please enter a valid 10-digit mobile number."); return false;
+}
+if (address.trim() === "") { alert("Please enter your address."); return false;
+}
+if (isNaN(salary) || salary <= 0) { alert("Please enter a valid positive salary."); return false;
+}
+return true;
+}
+</script>
